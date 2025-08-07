@@ -11,21 +11,20 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                Text("This is the root view 😁")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding(.bottom)
-                
-                NavigationLink(destination: Text("You've arrived at the Second View😄")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)) {
+                NavigationLink(destination: SecondView()) {
                     Text("Click me!")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(Color.orange)
                         .padding(.bottom)
                 }
+                
+                Text("This is the root view 😁")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .padding(.bottom)
+                
+            
                 NavigationLink(destination: Text("PEEK A BOO!👻")
                     .font(.largeTitle)) {
                     Text("No CLICK ME!")
@@ -33,11 +32,14 @@ struct ContentView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(Color.orange)
                 }
-
+                    .navigationTitle("Home")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
             }
-        }
-    }
-}
+            //VStack end
+        }//NavigationStack end
+    }//View end
+}//ContentView end
 
 #Preview {
     ContentView()
